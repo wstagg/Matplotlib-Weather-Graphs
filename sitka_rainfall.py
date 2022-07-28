@@ -5,9 +5,7 @@ from datetime import datetime
 filename = 'data/sitka_weather_2018_simple.csv'
 with open(filename) as f:
 	reader = csv.reader(f)
-	header_row = next(reader)
-	
-
+	header_row = next(reader)	
 
 	# Get dates and high temprature from the file.
 	dates, rain = [], []
@@ -17,13 +15,11 @@ with open(filename) as f:
 		dates.append(current_date)
 		rain.append(prcp)
 
-
 	# plot the high and low temperatures
 	plt.style.use('seaborn-pastel')
 	fig, ax = plt.subplots()
 	ax.plot(dates, rain, c='blue')
-	# ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
-	
+	# ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)	
 
 	# format plot
 	ax.set_title('Daily rainfall Sitka - 2018', fontsize=24)

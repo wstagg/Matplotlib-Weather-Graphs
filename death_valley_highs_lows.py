@@ -5,9 +5,7 @@ from datetime import datetime
 filename = 'data/death_valley_2018_simple.csv'
 with open(filename) as f:
 	reader = csv.reader(f)
-	header_row = next(reader)
-	
-
+	header_row = next(reader)	
 
 	# Get dates and high temprature from the file.
 	dates, highs, lows = [], [], []
