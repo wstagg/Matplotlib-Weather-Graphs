@@ -28,7 +28,6 @@ with open(filename) as f:
 	ax.plot(dates, lows, c='blue', alpha=0.5)
 	ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
 	
-
 	# format plot
 	title = 'Daily high and low temperatures - 2018\nDeath valley, CA'
 	ax.set_title(title, fontsize=20)

@@ -19,13 +19,10 @@ with open(filename) as f:
 			dates.append(current_date)
 			average.append(av)
 		
-
 	# plot the high and low temperatures
 	plt.style.use('seaborn')
 	fig, ax = plt.subplots()
 	ax.plot(dates, average, c='red')
-
-	
 
 	# format plot
 	ax.set_title('Average temperature Heathrow 1948 - 2022', fontsize=24)
