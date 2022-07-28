@@ -12,8 +12,8 @@ with open(filename) as f:
 	for row in reader:
 		current_date = datetime.strptime(row[2], '%Y-%m-%d')
 		try:
-			high = int(row[4])
-			low = int(row[5])
+			high = (int(row[5]) - 32) * 5/9
+			low = (int(row[6]) - 32) * 5/9
 		except ValueError:
 			print(f"Missing data for {current_date}")
 		else:
@@ -34,7 +34,7 @@ with open(filename) as f:
 	ax.set_title(title, fontsize=20)
 	ax.set_xlabel('', fontsize=16)
 	fig.autofmt_xdate()
-	ax.set_ylabel('Temprature (F)', fontsize=16)
+	ax.set_ylabel('Temprature (Cº)', fontsize=16)
 	ax.tick_params(axis='both', which='major', labelsize=16)
 
 	plt.show()
